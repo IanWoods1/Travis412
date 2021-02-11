@@ -30,4 +30,22 @@ public class SimpleCalculatorTest {
 		assertEquals(calc.divide(15, 5), 3);
 	}
 	
+	@Test (expected = ArithmeticException.class)
+	public void testDivideZeroDivisor() {
+		SimpleCalculator calc = new SimpleCalculator();
+		calc.divide(15, 0);
+	}
+	
+	@Test
+	public void testMinusNegativeMinuend() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.minus(-5, 3), -8);
+	}
+	
+	@Test
+	public void testMultiplyZeroMultiplicand() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.multiply(0, 3), 0);
+	}
+	
 }
